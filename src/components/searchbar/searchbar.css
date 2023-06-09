@@ -1,6 +1,6 @@
 .box {
   box-sizing: border-box;
-  width: auto;
+  width: 568px;
 
   background: #ffffff;
   border: 1px solid #121212;
@@ -15,7 +15,7 @@
   border-bottom-right-radius: 8px;
   background: #ffffff;
   border: 1px solid #121212;
-  width: auto;
+  width: 66px;
 }
 
 .parent {
