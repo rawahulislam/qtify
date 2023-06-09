@@ -1,0 +1,23 @@
+.box {
+  box-sizing: border-box;
+  width: auto;
+
+  background: #ffffff;
+  border: 1px solid #121212;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.search {
+  height: 48px;
+  box-sizing: border-box;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #121212;
+  width: auto;
+}
+
+.parent {
+  display: flex;
+}
