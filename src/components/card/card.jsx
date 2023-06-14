@@ -110,7 +110,7 @@ const CardJsx = () => {
             </div>
             <p
               style={{
-                paddingLeft: "4px",
+                wifth: "159px",
                 color: "white",
                 marginBottom: "0px"
               }}
@@ -157,7 +157,7 @@ const CardJsx = () => {
             </div>
             <p
               style={{
-                paddingLeft: "4px",
+                width: "159px",
                 color: "white",
                 marginBottom: "0px"
               }}
