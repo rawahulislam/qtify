@@ -23,7 +23,6 @@ const CardJsx = () => {
     );
     setNewalbums(response.data);
   };
-  console.log(newalbums);
 
   function handleExpand() {
     setExpand(albumstop.length);
@@ -79,7 +78,7 @@ const CardJsx = () => {
       </div>
       <div className="card">
         {albumstop.slice(0, expand).map((e) => (
-          <div>
+          <div key={e.id}>
             <img
               style={{ display: "block", width: "159px", height: "170px" }}
               src={e.image}
@@ -126,7 +125,7 @@ const CardJsx = () => {
       </div>
       <div className="card">
         {newalbums.slice(0, expand2).map((e) => (
-          <div>
+          <div key={e.id}>
             <img
               style={{ display: "block", width: "159px", height: "170px" }}
               src={e.image}
