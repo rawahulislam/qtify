@@ -1,37 +1,171 @@
 import card from "../../assets/CardImage.png";
+import axios from "axios";
 import "./card.css";
+import { useEffect, useState } from "react";
 const CardJsx = () => {
+  const [albumstop, setTopAlbums] = useState([]);
+  const [newalbums, setNewalbums] = useState([]);
+  const [expand, setExpand] = useState(7);
+  const [expand2, setExpand2] = useState(7);
+  const [collapse, setCollapse] = useState(true);
+  const [collapse2, setCollapse2] = useState(true);
+
+  const topAlbums = async () => {
+    const response = await axios.get(
+      `https://qtify-backend-labs.crio.do/albums/top`
+    );
+    setTopAlbums(response.data);
+  };
+
+  const NewAlbums = async () => {
+    const response = await axios.get(
+      `https://qtify-backend-labs.crio.do/albums/new`
+    );
+    setNewalbums(response.data);
+  };
+  console.log(newalbums);
+
+  function handleExpand() {
+    setExpand(albumstop.length);
+    setCollapse(!collapse);
+  }
+
+  function handleCollapse() {
+    setExpand(7);
+    setCollapse(!collapse);
+  }
+
+  function handleExpand2() {
+    setExpand2(newalbums.length);
+    setCollapse2(!collapse2);
+  }
+
+  function handleCollapse2() {
+    setExpand2(7);
+    setCollapse2(!collapse2);
+  }
+
+  let collapseJsx = (
+    <div onClick={handleCollapse} className="headingSub">
+      Collapse
+    </div>
+  );
+  let ShowAllJsx = (
+    <div onClick={handleExpand} className="headingSub">
+      Show All
+    </div>
+  );
+  let collapseJsx2 = (
+    <div onClick={handleCollapse2} className="headingSub">
+      Collapse
+    </div>
+  );
+  let ShowAllJsx2 = (
+    <div onClick={handleExpand2} className="headingSub">
+      Show All
+    </div>
+  );
+
+  useEffect(() => {
+    topAlbums();
+    NewAlbums();
+  }, []);
+
   return (
     <div className="grid">
-      <div className="heading1">Top albums</div>
+      <div className="heading1">
+        <div>Top Albums</div>
+        {collapse ? ShowAllJsx : collapseJsx}
+      </div>
       <div className="card">
-        <img style={{ display: "block" }} src={card} alt="cardImg" />
-        <div
-          style={{
-            display: "flex",
-            backgroundColor: "white",
-            margin: "0px",
-            padding: "12px",
-            borderRadius: "0px 0px 10px 10px",
-            paddingLeft: "4px"
-          }}
-        >
-          <p
-            style={{
-              display: "flex",
-              backgroundColor: "black",
-              color: "white",
-              borderRadius: "12px",
-              margin: "0px",
-              padding: "8px"
-            }}
-          >
-            100 Follows
-          </p>
-        </div>
-        <p style={{ paddingLeft: "4px", color: "white", marginBottom: "0px" }}>
-          New Bollywood
-        </p>
+        {albumstop.slice(0, expand).map((e) => (
+          <div>
+            <img
+              style={{ display: "block", width: "159px", height: "170px" }}
+              src={e.image}
+              alt="cardImg"
+            />
+            <div
+              style={{
+                display: "flex",
+                backgroundColor: "white",
+                margin: "0px",
+                padding: "12px",
+                borderRadius: "0px 0px 10px 10px",
+                paddingLeft: "4px"
+              }}
+            >
+              <p
+                style={{
+                  display: "flex",
+                  backgroundColor: "black",
+                  color: "white",
+                  borderRadius: "12px",
+                  margin: "0px",
+                  padding: "8px"
+                }}
+              >
+                {e.follows} Follows
+              </p>
+            </div>
+            <p
+              style={{
+                paddingLeft: "4px",
+                color: "white",
+                marginBottom: "0px"
+              }}
+            >
+              {e.title}
+            </p>
+          </div>
+        ))}
+      </div>
+      <div className="heading1">
+        <div>New Albums</div>
+        {collapse2 ? ShowAllJsx2 : collapseJsx2}
+      </div>
+      <div className="card">
+        {newalbums.slice(0, expand2).map((e) => (
+          <div>
+            <img
+              style={{ display: "block", width: "159px", height: "170px" }}
+              src={e.image}
+              alt="cardImg"
+            />
+            <div
+              style={{
+                display: "flex",
+                backgroundColor: "white",
+                margin: "0px",
+                padding: "12px",
+                borderRadius: "0px 0px 10px 10px",
+                paddingLeft: "4px"
+              }}
+            >
+              <p
+                style={{
+                  display: "flex",
+                  backgroundColor: "black",
+                  color: "white",
+                  borderRadius: "12px",
+                  margin: "0px",
+                  padding: "8px"
+                }}
+              >
+                {e.follows} Follows
+              </p>
+            </div>
+            <p
+              style={{
+                paddingLeft: "4px",
+                color: "white",
+                marginBottom: "0px"
+              }}
+            >
+              {e.title}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );

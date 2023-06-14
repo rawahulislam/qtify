@@ -1,34 +1,34 @@
 .heading1 {
-  position: ;
-  width: 122px;
-  height: 30px;
-  left: 0px;
-  top: 0px;
+  display: flex;
+  justify-content: space-between;
 
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
+  width: 90vw;
   /* identical to box height */
 
   color: #ffffff;
 }
+
+.headingSub:hover {
+  color: #34c94b;
+  cursor: pointer;
+}
 .card {
+  display: flex;
   margin: 0px;
-  display: block;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
 .grid {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  align-content: center;
+  flex-direction: column;
+  margin-left: 3rem;
   gap: 32px;
-
-  position: ;
-  width: 1384px;
-  height: 592px;
-  left: 31px;
-  top: 368px;
 }
