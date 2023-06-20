@@ -31,19 +31,25 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`
-  };
-}
-
 export default function BasicTabs({ data, genre }) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
+  const jazz = data.filter((e) => {
+    return e.genre.key === "jazz";
+  });
+  const rock = data.filter((e) => {
+    return e.genre.key === "rock";
+  });
+  const pop = data.filter((e) => {
+    return e.genre.key === "pop";
+  });
+  const blues = data.filter((e) => {
+    return e.genre.key === "blues";
+  });
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -62,15 +68,22 @@ export default function BasicTabs({ data, genre }) {
           }}
         >
           {genre.map((e) => (
-          
-              <Tab key={e.key} label={e.label} {...a11yProps(e.key)} />
-           
+            <Tab key={e.id} label={e.label} />
           ))}
         </Tabs>
       </Box>
 
       <TabPanel value={value} index={0}>
-        <FilterSlider data={data} />
+        <FilterSlider data={jazz} />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <FilterSlider data={rock} />
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <FilterSlider data={pop} />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <FilterSlider data={blues} />
       </TabPanel>
     </Box>
   );

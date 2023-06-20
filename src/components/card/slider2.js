@@ -13,7 +13,7 @@ export default function Courosel2({ data }) {
       <Swiper
         onSwiper={setSwiperRef}
         slidesPerView={7}
-        centeredSlides={true}
+        centeredSlides={false}
         spaceBetween={0}
         pagination={{
           type: "fraction"

@@ -9,3 +9,12 @@ body {
   background-color: var(--black-color);
   font-family: "Poppins", sans-serif;
 }
+
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  height: 2px;
+  background-color: var(--primary-color);
+  border: none;
+}

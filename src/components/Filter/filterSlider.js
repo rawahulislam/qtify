@@ -13,7 +13,7 @@ export default function FilterSlider({ data }) {
       <Swiper
         onSwiper={setSwiperRef}
         slidesPerView={7}
-        centeredSlides={true}
+        centeredSlides={false}
         spaceBetween={0}
         pagination={{
           type: "fraction"
@@ -66,7 +66,7 @@ export default function FilterSlider({ data }) {
                   marginBottom: "0px"
                 }}
               >
-                {e.title}
+                {e.title.substring(0, 17).concat("...")}
               </p>
             </div>
           </SwiperSlide>
