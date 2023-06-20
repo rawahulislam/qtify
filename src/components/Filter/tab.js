@@ -62,9 +62,9 @@ export default function BasicTabs({ data, genre }) {
           }}
         >
           {genre.map((e) => (
-            <div key={e.key}>
-              <Tab label={e.label} {...a11yProps(e.key)} />
-            </div>
+          
+              <Tab key={e.key} label={e.label} {...a11yProps(e.key)} />
+           
           ))}
         </Tabs>
       </Box>
