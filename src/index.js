@@ -1,8 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-document.title = "Qtify"
-import App from "./App";
 
+import App from "./App";
+document.title = "Qtify";
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 

@@ -9,12 +9,13 @@
   line-height: 30px;
   width: 89vw;
   /* identical to box height */
-
+  margin-bottom: 12px;
   color: #ffffff;
 }
-
-.headingSub:hover {
+.headingSub {
   color: #34c94b;
+}
+.headingSub:hover {
   cursor: pointer;
 }
 .card {
@@ -22,13 +23,15 @@
   margin: 0px;
   gap: 32px;
   flex-wrap: wrap;
+  margin-bottom: 12px;
 }
 
 .grid {
-  display: flex;
-  align-items: flex-start;
-  align-content: center;
-  flex-direction: column;
-  margin-left: 3rem;
-  gap: 32px;
+  display: ;
+  align-items: ;
+  align-content: ;
+  flex-direction: ;
+  margin-left: 50px;
+  margin-right: 50px;
+  gap: ;
 }
