@@ -11,8 +11,8 @@ body {
 }
 
 hr {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 32px;
+  margin-bottom: 32px;
 
   height: 2px;
   background-color: var(--primary-color);

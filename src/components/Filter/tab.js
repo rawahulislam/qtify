@@ -67,22 +67,25 @@ export default function BasicTabs({ data, genre }) {
             }
           }}
         >
+          <Tab label="ALL" />
           {genre.map((e) => (
             <Tab key={e.id} label={e.label} />
           ))}
         </Tabs>
       </Box>
-
       <TabPanel value={value} index={0}>
-        <FilterSlider data={jazz} />
+        <FilterSlider data={data} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <FilterSlider data={rock} />
+        <FilterSlider data={jazz} />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <FilterSlider data={pop} />
+        <FilterSlider data={rock} />
       </TabPanel>
       <TabPanel value={value} index={3}>
+        <FilterSlider data={pop} />
+      </TabPanel>
+      <TabPanel value={value} index={4}>
         <FilterSlider data={blues} />
       </TabPanel>
     </Box>
