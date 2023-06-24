@@ -92,7 +92,7 @@ const CardJsx = () => {
           <Courosel data={albumstop} />
         ) : (
           albumstop.slice(0, expand).map((e) => (
-            <Tooltip key={e.id} title={`${e.songs.length} Songs`}>
+            <Tooltip key={e.id} placement="top" arrow title={`${e.songs.length} Songs`}>
               <div>
                 <img
                   style={{
@@ -150,7 +150,7 @@ const CardJsx = () => {
           <Courosel2 data={newalbums} />
         ) : (
           newalbums.slice(0, expand2).map((e) => (
-            <Tooltip key={e.id} title={`${e.songs.length} Songs`}>
+            <Tooltip key={e.id} placement="top" arrow title={`${e.songs.length} Songs`}>
               <div key={e.id}>
                 <img
                   style={{
