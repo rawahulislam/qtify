@@ -1,6 +1,7 @@
 import card from "../../assets/CardImage.png";
 import Courosel from "./slider";
 import Courosel2 from "./slider2";
+import { Tooltip } from "@mui/material";
 
 import axios from "axios";
 import "./card.css";
@@ -91,50 +92,52 @@ const CardJsx = () => {
           <Courosel data={albumstop} />
         ) : (
           albumstop.slice(0, expand).map((e) => (
-            <div key={e.id}>
-              <img
-                style={{
-                  borderRadius: "10px",
-                  display: "block",
-                  width: "159px",
-                  height: "170px"
-                }}
-                src={e.image}
-                alt="cardImg"
-              />
-              <div
-                style={{
-                  display: "flex",
-                  backgroundColor: "white",
-                  margin: "0px",
-                  padding: "12px",
-                  borderRadius: "0px 0px 10px 10px",
-                  paddingLeft: "4px"
-                }}
-              >
-                <p
+            <Tooltip key={e.id} title={`${e.songs.length} Songs`}>
+              <div>
+                <img
+                  style={{
+                    borderRadius: "10px",
+                    display: "block",
+                    width: "159px",
+                    height: "170px"
+                  }}
+                  src={e.image}
+                  alt="cardImg"
+                />
+                <div
                   style={{
                     display: "flex",
-                    backgroundColor: "black",
-                    color: "white",
-                    borderRadius: "12px",
+                    backgroundColor: "white",
                     margin: "0px",
-                    padding: "8px"
+                    padding: "12px",
+                    borderRadius: "0px 0px 10px 10px",
+                    paddingLeft: "4px"
                   }}
                 >
-                  {e.follows} Follows
+                  <p
+                    style={{
+                      display: "flex",
+                      backgroundColor: "black",
+                      color: "white",
+                      borderRadius: "12px",
+                      margin: "0px",
+                      padding: "8px"
+                    }}
+                  >
+                    {e.follows} Follows
+                  </p>
+                </div>
+                <p
+                  style={{
+                    width: "159px",
+                    color: "white",
+                    marginBottom: "0px"
+                  }}
+                >
+                  {e.title}
                 </p>
               </div>
-              <p
-                style={{
-                  width: "159px",
-                  color: "white",
-                  marginBottom: "0px"
-                }}
-              >
-                {e.title}
-              </p>
-            </div>
+            </Tooltip>
           ))
         )}
       </div>
@@ -147,50 +150,52 @@ const CardJsx = () => {
           <Courosel2 data={newalbums} />
         ) : (
           newalbums.slice(0, expand2).map((e) => (
-            <div key={e.id}>
-              <img
-                style={{
-                  borderRadius: "10px",
-                  display: "block",
-                  width: "159px",
-                  height: "170px"
-                }}
-                src={e.image}
-                alt="cardImg"
-              />
-              <div
-                style={{
-                  display: "flex",
-                  backgroundColor: "white",
-                  margin: "0px",
-                  padding: "12px",
-                  borderRadius: "0px 0px 10px 10px",
-                  paddingLeft: "4px"
-                }}
-              >
-                <p
+            <Tooltip key={e.id} title={`${e.songs.length} Songs`}>
+              <div key={e.id}>
+                <img
+                  style={{
+                    borderRadius: "10px",
+                    display: "block",
+                    width: "159px",
+                    height: "170px"
+                  }}
+                  src={e.image}
+                  alt="cardImg"
+                />
+                <div
                   style={{
                     display: "flex",
-                    backgroundColor: "black",
-                    color: "white",
-                    borderRadius: "12px",
+                    backgroundColor: "white",
                     margin: "0px",
-                    padding: "8px"
+                    padding: "12px",
+                    borderRadius: "0px 0px 10px 10px",
+                    paddingLeft: "4px"
                   }}
                 >
-                  {e.follows} Follows
+                  <p
+                    style={{
+                      display: "flex",
+                      backgroundColor: "black",
+                      color: "white",
+                      borderRadius: "12px",
+                      margin: "0px",
+                      padding: "8px"
+                    }}
+                  >
+                    {e.follows} Follows
+                  </p>
+                </div>
+                <p
+                  style={{
+                    width: "159px",
+                    color: "white",
+                    marginBottom: "0px"
+                  }}
+                >
+                  {e.title}
                 </p>
               </div>
-              <p
-                style={{
-                  width: "159px",
-                  color: "white",
-                  marginBottom: "0px"
-                }}
-              >
-                {e.title}
-              </p>
-            </div>
+            </Tooltip>
           ))
         )}
       </div>
