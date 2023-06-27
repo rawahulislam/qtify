@@ -4,7 +4,7 @@ const HeroJsx = () => {
   return (
     <div>
       <div className="content">
-        <img className="Hero" src={hero} alt="heroImage" />;
+        <img className="Hero" src={hero} alt="heroImage" />
       </div>
     </div>
   );

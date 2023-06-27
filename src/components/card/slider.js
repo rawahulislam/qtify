@@ -25,7 +25,7 @@ export default function Courosel({ data }) {
       >
         {data.map((e) => (
           <SwiperSlide key={e.id}>
-            <Tooltip placement="top" arrow title={`${e.songs.length} Songs`}>
+            <Tooltip arrow placement="top" title={`${e.songs.length} Songs`}>
               <div>
                 <img
                   style={{
